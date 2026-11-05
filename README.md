@@ -20,3 +20,7 @@ Static browser-only retirement planner for North Carolina teachers. This public 
 - The separately supplied private-profile JSON is **not encrypted** until imported. Keep it in a safe location, then delete the plaintext copy after verifying your encrypted backup.
 
 The app provides illustrative TSERS projections, not official benefit determinations.
+
+
+HOME SCREEN ICON UPDATE
+Upload/replace index.html plus icon-180.png, icon-192.png, icon-512.png, icon-32.png and manifest.webmanifest to the same public site directory. In Safari, open the live site, Share > Add to Home Screen. If the old icon persists, remove the old shortcut then add the site again. No private retirement profile is included in this package.
