@@ -1,26 +1,43 @@
-# Next Chapter: private retirement planner
+# Next Chapter - iPad Home Screen icon fix
 
-Static browser-only retirement planner for North Carolina teachers. This public package contains **no individual salary, service record, leave balances, medical history, scenarios, or private profile**. The starting figures are a fictional demo.
+This archive is a public-safe static website. It does NOT contain personal profile data.
+Do NOT upload the private retirement profile JSON to GitHub.
 
-## Publish on GitHub Pages
+## GitHub Pages upload
 
-1. Create a **new repository** for this project.
-2. Upload only `index.html` (and this `README.md` if desired). **Never upload your private profile or an exported scenario.**
-3. Under repository Settings → Pages choose Deploy from a branch → `main` / (root), and save.
-4. After publishing, open the HTTPS Pages address. Set a private passphrase (12+ characters) and use **Load private profile** with the separate `.json` file held on your own device.
-5. Download an encrypted backup from Settings and keep it in Files; do not place the backup in the GitHub repository.
+1. Open the GitHub repository that already hosts the site.
+2. Extract this ZIP first. Do not upload the ZIP file itself.
+3. Upload *all the extracted files* into the same publishing directory as index.html.
+   Usually this is the root of the `main` branch (if GitHub Pages is configured for main/(root)).
+4. If GitHub offers to overwrite the old index.html or old icons, replace them.
+5. Commit the changes, and wait for the Pages deployment to finish.
+6. Open the live Pages URL in Safari. Before adding to Home Screen, visit
+   `<your-site-url>/apple-touch-icon.png` to confirm the custom W icon is served.
+7. If it loads, delete the old N Home Screen shortcut. Reopen the live page,
+   refresh it, then Share > Add to Home Screen. Set the name to `Next Chapter`.
 
-## Privacy design
+The icon files must be siblings of index.html, not in an additional folder.
+If GitHub Pages is configured for `/docs`, put all site files in `/docs` instead.
 
-- No third-party libraries, scripts, CSS, analytics, cookies, advertising, logins, fetch, XHR, or API calls.
-- A restrictive CSP disallows outbound JavaScript network connections. Following the optional official-source hyperlinks leaves the website.
-- Personal inputs and future scenarios are saved only as PBKDF2 (250,000 iterations) + AES-256-GCM encrypted data in this browser's localStorage.
-- Nothing private is shipped with this package. The private profile is manually imported on-device; no uploading to a web server occurs.
-- Browser storage can be cleared by Safari, and malware/extensions/device administrators may still access information displayed or typed. Use a strong device passcode and keep an encrypted backup.
-- The separately supplied private-profile JSON is **not encrypted** until imported. Keep it in a safe location, then delete the plaintext copy after verifying your encrypted backup.
+Example for Pages using main/(root):
 
-The app provides illustrative TSERS projections, not official benefit determinations.
+index.html
+apple-touch-icon.png
+apple-touch-icon-167x167.png
+apple-touch-icon-152x152.png
+icon-180.png
+icon-192.png
+icon-512.png
+icon-32.png
+manifest.webmanifest
+.nojekyll
+README.md
 
+## Notes
 
-HOME SCREEN ICON UPDATE
-Upload/replace index.html plus icon-180.png, icon-192.png, icon-512.png, icon-32.png and manifest.webmanifest to the same public site directory. In Safari, open the live site, Share > Add to Home Screen. If the old icon persists, remove the old shortcut then add the site again. No private retirement profile is included in this package.
+Safari shows a single-letter monogram when it cannot use the declared Home Screen
+icon. Changing the HTML alone does not upload the associated image assets.
+Deleting the existing Home Screen icon and adding it again is required.
+
+Data privacy: the public site code contains no personal starting balance or salary;
+private profiles remain on the user's device after private import.
